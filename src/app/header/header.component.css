@@ -1,0 +1,29 @@
+.header{
+    background-color: #0f0844d6;
+    color: white;
+    font-weight: bold;
+    margin-left: 0px;
+    padding-left: 430px;
+    width: 100vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+li ul{
+    display:inline-block;
+    margin-right: 200px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+
+}
+
+.image{
+    width: 50px;
+    height: 20px;
+  margin-left: -200px;
+  margin-top: 0px;
+}
+li{
+    list-style: none;
+}

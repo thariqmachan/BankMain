@@ -1,0 +1,102 @@
+
+
+    <!-- <div style="margin-top: 153px;" class=" container w-50  p-5  border border-2 text-center ">
+        <form action="">
+            <input id="a2" name="acno" type="text" placeholder="enter ac no" class="form-control mt-5 p-2 text-white">
+            <input id="p2" name="password" type="text" placeholder="enter password" class="form-control mt-5 p-2">
+            <button onclick="login()" type="submit "   class="btn btn-light w-25 mt-4">Login</button>
+            <button onclick="signUp()" type="submit "   class="btn btn-light w-25 mt-4 ms-3">Sign-up</button><br>
+
+
+
+            <a  style="text-decoration: none;" class="fs-5 mt-5" href="register.html">create account</a>
+        </form>
+        <div class="blur container w-50"></div>
+    </div>
+ -->
+
+ <!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login and Registration Form in HTML & CSS | CodingLab </title>
+   
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+
+  <!-- <h1>{{data}}</h1> -->
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="../gonzalo-kenny-kdXHg07liGY-unsplash.jpg" alt="">
+        <div class="text">
+          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        <div class="text">
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Login</div>
+          <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input (change)="acnoChange($event)" type="text" [placeholder]="data2" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input (change)="pswChange($event)" type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <input (click)="login()" type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Sumbit">
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+   

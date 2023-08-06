@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,500&family=Noto+Sans+TC:wght@100&family=Poppins:ital,wght@0,200;0,400;0,600;1,700;1,900&family=Raleway:ital,wght@0,700;1,400;1,500;1,900&display=swap');
+/* font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Noto Sans TC', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif; */
+body{
+    width: 100vw;
+   background-color: #7D2AE8;
+}

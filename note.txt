@@ -1,0 +1,25 @@
+DATA BINDING TECHNIQUES
+--------------------------
+
+
+1. One way binding 
+----------------------
+
+ts - component
+html - view 
+
+ in a single componet transfer of data btwn ts and html files 
+
+        1.1 ts to html ( component to view )
+
+            1.1.1 string interpollation {{}}
+            1.1.2 property binding []
+
+        1.2 html to ts ( view to componenent )
+
+            1.2.1 Event binding onClick - click (in angular)  (event) = " method( ) "
+             (click)="login()" onlick innu pakaram verum click enne ullu
+
+            1.2.2  $event binding   , data ulla event ine aanu $event enn parayaaan , events r of 2 types with n without data
+                onChange - change ( in angular )  (event)="method($event)"  , sadharna input field il aahn use chyaan change
+
