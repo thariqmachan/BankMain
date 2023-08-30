@@ -5,12 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent   {
-    // data = "happy banking with us"
-    num:any //  whenever we need to store value
-
+export class LoginComponent  implements OnInit {
+    data = "happy banking with us"
+     //num:any //  whenever we need to store value
     data2="enter account number"
+    acno:any=""
 
+    constructor () {}
+
+    ngOnInit():void {
+      
+    }
 
 
     login(){
@@ -28,3 +33,21 @@ export class LoginComponent   {
     }
  
 }
+
+
+
+// login(){
+//   console.log(this.acno);
+//   console.log(this.psw);
+//   // alert(this.acno)
+
+
+//   //redirection
+
+
+//   //api call
+  
+  
+// }
+
+

@@ -18,8 +18,129 @@ html - view
         1.2 html to ts ( view to componenent )
 
             1.2.1 Event binding onClick - click (in angular)  (event) = " method( ) "
-             (click)="login()" onlick innu pakaram verum click enne ullu
+             (click)="login()" onclick innu pakaram verum click enne ullu
 
             1.2.2  $event binding   , data ulla event ine aanu $event enn parayaaan , events r of 2 types with n without data
                 onChange - change ( in angular )  (event)="method($event)"  , sadharna input field il aahn use chyaan change
 
+            1.2.3 event binding using template rendering variable - #variable
+
+
+2.1 Two way binding
+
+    2.1 - ngModel - FormsModule
+
+
+
+
+LIFE CYCLE BLOCKS OF ANGULAR COMPONENT 
+-------------------------------------------
+constructor > ngOnInit > other methods 
+
+* angular il class components annu vernath  , some techmologies implement function based 
+* react use function based componenent
+* class inte obj create chyumbo maathram aahn real world entity kittunath
+* class inte obj eppazha create aavaan vechaaal proj run chythittu indakye class/component open chyumelo browser il 
+appozhaan create aavunnath 
+* obj create aavubo first nadakunna method aahn constructor method
+* constructor () {} = ithinte akath browser open aakumbo thane run aavnda karynghal kodtha mathi  , nammal aayitu run chyndi aavsshym ila
+* ngOnInit:void {} = abstracted method , already implementation okke kainenn class inte akath namml inherit chyth use chyne pole call chythittu
+venda kaynghal maathrm kodtha mathi 
+* each component enn parayunnathu - login , signup etc...
+btwn each componenent namak files share chyaan patila , only btwn files inside each component
+* string interpollation - ts il ulla data string aayitu html page il kaanikynm enn indenghi  {{data}}
+* property binding = ts il ulla data html ilotu oru string aayit ella marichu oru attributes/property inte alue aayit kondonde enghil 
+
+
+
+
+21/08/23 ( dependency injection )
+
+folder              - js file   - class - methods 
+library/package     - module    - class - methods
+
+
+
+ANGULAR SERVICES
+--------------------
+
+
+
+REDIRECTION IN ANGULAR
+----------------------------
+path set 
+
+* redirection chyanenghi path set chyanm , app-routing.module.ts il ella path um set chyth vechattindu
+
+
+redirecton in methods
+------------------------
+
+navigateByUrl - method
+Router - class
+AppRoutingModule - module 
+
+
+link
+------
+href - routerlink
+
+
+* button click chyumbo redirect - navigateByUrl(method)
+method verunnath class inte akath ninn aahn
+* Router(class) , router ulath ethelum module de akath aayirikyum
+* AppRoutingModule(module)
+AppRoutingModule de akath ulla router de akath ulla navigateByUrl use chythale redirect chyaan patullu
+* two types of redirection - onnu link click chyumbo (href / routerlink)
+                           - rand button click chyumbo ( navigateByUrl)
+ 
+
+
+ * INHERITANCE oru class il ulla methods / variables okke vere class inakathu use chyaan vendi aahn inheritance use chyne
+
+
+
+ dependency injection 
+ -----------------------
+to use properties ( methods nd variables ) of one class in another class
+done inside contructor  , constructor (accessSpecifier variable:ClassName )
+
+inject chyne class inu access specifier parnj kodknm
+access specifiers -     private(injected class available only in dat class) / public(injected class available on all other classes in that file )   , 
+oru class ne aahn vere class ilotu inject chyaan ponnath  ,anghne chyumbo aah class ne aarkoke access chyaam enn ullath kodkunnathinu aaahn access specifier enn parayaaan
+access specifier aahn theerumanikyaan aarkoke access permission kodknm enn ullath 
+
+* private aahn eppozhum chyaaru
+* access specifier variable:ClassName ( inghne aahn kodkaan athum constructor de akath )
+
+
+
+class{
+    constructor(ivde aahn inject hcynndath){
+
+    }
+}
+
+class{
+    constructor(private){     // eeh class inu maatrhame access chyaan patullu
+
+    }
+}
+
+class{
+    constructor(public){     // ela class inum access chyaan pattum  , bracket inte akath inject hcyne class ne porthu ulla class inu access chyaan pattum
+
+    }
+}
+class{ 
+}
+
+
+
+22/08/23 (server creation)
+----------------------------------
+
+
+
+23/08/23 ()
+-------------
