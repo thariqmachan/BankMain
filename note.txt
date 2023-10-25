@@ -61,8 +61,7 @@ library/package     - module    - class - methods
 
 
 
-ANGULAR SERVICES
---------------------
+
 
 
 
@@ -137,10 +136,77 @@ class{
 
 
 
+BUTTON CLICK REDIRECTION
+-------------------------------
+ constructor (private rout:Router) { }
+ login(){
+      this.rout.navigateByUrl("home")
+      
+    }
+
+LINK CLICK REDIRECTION
+-----------------------------
+inside a tg > routerLink="signup"
+
+
+
+
+ANGULAR SERVICES
+__________________________
+
+* components cant share data btwn each other so if comp1 , comp2 , comp3 wants same data then we use angular SERVICES    
+* classses or data etc.. can be used by any comp by asseccing it frm the service file
+* a ts file contain methods and datas ,
+all component can access the data inside services 
+
+
+to create service file -
+each module each service file 
+* ng g s serviceName
+--> angular generate service serviceName
+
+
+two files will be created on that thke ts file nd give data or method 
+  data="data inside service files"
+
+  serviceMethod(){
+    alert("service method")
+  }
+
+
+and then go to the componetn where we want that data/method to be called  , take ts file in that component and first dependency injection nd ngoninit call
+ constructor (private ds:DataService) { }
+
+  ngOnInit():void {
+    this.ds.serviceMethod()
+  }
+
+
+
+setTimeOut(()=>{                 used to set time when to start 
+      this.ds.serviceMethod()
+})
+
+
+
+
+
+
+
+
+
+
 22/08/23 (server creation)
 ----------------------------------
+* proj folder de porthu new folder create chyanm
+* front end (userinterface - angular ) , backend(server(nodejs express) , database(mongoDB) )
+* SERVER - decides when to send/take data from/to frontend  
+
+TO INSTALL SERVER - 
+* npm is used  
+* package.json file should be there to install express
+* step 1: install package.json file 
+  remaining in bserver folder note
 
 
 
-23/08/23 ()
--------------

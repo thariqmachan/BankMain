@@ -1,46 +1,32 @@
 
 
-    <!-- <div style="margin-top: 153px;" class=" container w-50  p-5  border border-2 text-center ">
-        <form action="">
-            <input id="a2" name="acno" type="text" placeholder="enter ac no" class="form-control mt-5 p-2 text-white">
-            <input id="p2" name="password" type="text" placeholder="enter password" class="form-control mt-5 p-2">
-            <button onclick="login()" type="submit "   class="btn btn-light w-25 mt-4">Login</button>
-            <button onclick="signUp()" type="submit "   class="btn btn-light w-25 mt-4 ms-3">Sign-up</button><br>
 
 
-
-            <a  style="text-decoration: none;" class="fs-5 mt-5" href="register.html">create account</a>
-        </form>
-        <div class="blur container w-50"></div>
-    </div>
- -->
-
- <!DOCTYPE html>
-<!-- Coding by CodingNepal | www.codingnepalweb.com-->
+ <!-- <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title> Login and Registration Form in HTML & CSS | CodingLab </title>
    
-    <!-- Fontawesome CDN Link -->
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
 
-  <!-- <h1>{{data}}</h1> -->
+  
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../gonzalo-kenny-kdXHg07liGY-unsplash.jpg" alt="">
+        <img src="../brock-wegner-3ROwc3JSjCk-unsplash.jpg" alt="">
         <div class="text">
           <span class="text-1">Every new friend is a <br> new adventure</span>
           <span class="text-2">Let's get connected</span>
         </div>
       </div>
       <div class="back">
-        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        
         <div class="text">
           <span class="text-1">Complete miles of journey <br> with one step</span>
           <span class="text-2">Let's get started</span>
@@ -71,24 +57,31 @@
       </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-        <form action="#">
+        <form  action="#" >
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" required>
+                <input formControlName="acno" type="text" placeholder="Enter your account number" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input formControlName="uname" type="text" placeholder="Enter your name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input formControlName="psw" type="password" placeholder="Enter your password" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input formControlName="cpsw" type="password" placeholder="confirm your password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+              
+
+
             </div>
       </form>
     </div>
@@ -96,7 +89,62 @@
     </div>
   </div>
 </body>
-</html>
+</html> -->
 
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://i.postimg.cc/MTdY8K13/bankimg.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" id="f1">
+        <form (ngSubmit)="login()" [formGroup]="loginForm">
+
+          <div class="form-outline">
+            <h1 class="text-center mb-5">Log In</h1>
+            <input formControlName="acno" type="text" id="acno" name="acno"  placeholder="Enter account number" class="form-control form-control-lg"
+              [placeholder]="data2" />
+          </div>
+
+          <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+            <p class="text-danger">please include numbers only</p>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline">
+            <input formControlName="psw" type="password" id="pwd" name="pwd" class="form-control form-control-lg mt-5"
+              placeholder="Enter password" />
+          </div>
+
+          <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+            <p class="text-danger">Accept numbers and characters</p>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check m-4 mb-0">
+              <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" class="text-body m-4 mb-0">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button  type="submit" class="btn btn-lg text-white"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;background-color: cadetblue;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a routerLink="signup"
+                class="link-danger">Register</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp -->
 
    

@@ -8,8 +8,7 @@
 <body>
 
 
-   
-      <div class="container">
+      <div class="container" [ngClass]="dAcno?'c2':''">
         <div class="image-box">
           <div class="image">
             <img class="img1" src="https://i.postimg.cc/ncVfd0qP/johny-vino-9f7s4a-Latpw-unsplash.jpg" alt="">
@@ -27,23 +26,28 @@
       </div>
 
 
-
-      <div class="text">
-        <h3>welocme Anu</h3>
+     
+      <div class="text" >
+          <!-- <h5>{{sdata}}</h5> -->
+        <!-- <h2>Hi welcome {{name}}</h2> -->
+        <h3>welocme {{name}}</h3>
         <h1>ENJOY NET BANKING WITH <span>SBI</span></h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Tempore, facilis magni placeat incidunt perspiciatis <br> nulla sint accusantium vel natus quasi commodi unde eligendi,<br> esse sapiente ex possimus odio nam officia.</p>
+      <app-delete [data]="dAcno" (onCancel)="cancelp()" (onDelete)="yesDelete($event)"></app-delete>
+
       </div>
+
     
 
-          <div id="buttons">
+          <div id="buttons" [ngClass]="dAcno?'c2':''">
 
                <div id="mains">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" >View profile <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"></path></svg></button><br>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Balance enquiry  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path d="M22.0049 8H13.0049C12.4526 8 12.0049 8.44772 12.0049 9V15C12.0049 15.5523 12.4526 16 13.0049 16H22.0049V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H21.0049C21.5572 3 22.0049 3.44772 22.0049 4V8ZM15.0049 11H18.0049V13H15.0049V11Z"></path></svg></button><br>
+                    <button (click)="getProfile()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" >View profile <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"></path></svg></button><br>
+                    <button (click)="getbalance()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >Balance enquiry  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path d="M22.0049 8H13.0049C12.4526 8 12.0049 8.44772 12.0049 9V15C12.0049 15.5523 12.4526 16 13.0049 16H22.0049V20C22.0049 20.5523 21.5572 21 21.0049 21H3.00488C2.4526 21 2.00488 20.5523 2.00488 20V4C2.00488 3.44772 2.4526 3 3.00488 3H21.0049C21.5572 3 22.0049 3.44772 22.0049 4V8ZM15.0049 11H18.0049V13H15.0049V11Z"></path></svg></button><br>
                     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Money transfer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M5.37833 4.51353C7.14264 2.95131 9.46301 2.00293 12.0049 2.00293C17.5277 2.00293 22.0049 6.48008 22.0049 12.0029C22.0049 14.1279 21.3421 16.098 20.212 17.7179L17.5049 12.0029H20.0049C20.0049 7.58465 16.4232 4.00293 12.0049 4.00293C9.76058 4.00293 7.73213 4.92709 6.27932 6.41563L5.37833 4.51353ZM18.6314 19.4923C16.8671 21.0545 14.5468 22.0029 12.0049 22.0029C6.48204 22.0029 2.00488 17.5258 2.00488 12.0029C2.00488 9.87798 2.66767 7.90784 3.79778 6.28794L6.50488 12.0029H4.00488C4.00488 16.4212 7.5866 20.0029 12.0049 20.0029C14.2492 20.0029 16.2776 19.0788 17.7304 17.5902L18.6314 19.4923ZM8.50488 14.0029H14.0049C14.281 14.0029 14.5049 13.7791 14.5049 13.5029C14.5049 13.2268 14.281 13.0029 14.0049 13.0029H10.0049C8.62417 13.0029 7.50488 11.8836 7.50488 10.5029C7.50488 9.12222 8.62417 8.00293 10.0049 8.00293H11.0049V7.00293H13.0049V8.00293H15.5049V10.0029H10.0049C9.72874 10.0029 9.50488 10.2268 9.50488 10.5029C9.50488 10.7791 9.72874 11.0029 10.0049 11.0029H14.0049C15.3856 11.0029 16.5049 12.1222 16.5049 13.5029C16.5049 14.8836 15.3856 16.0029 14.0049 16.0029H13.0049V17.0029H11.0049V16.0029H8.50488V14.0029Z"></path></svg></button><br>
-                    <button>Account statement <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M3 4H21V6H3V4ZM3 19H21V21H3V19ZM3 14H21V16H3V14ZM3 9H21V11H3V9Z"></path></svg></button><br>
-                    <button>Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM19 16.5858L21.1213 14.4645L22.5355 15.8787L20.4142 18L22.5355 20.1213L21.1213 21.5355L19 19.4142L16.8787 21.5355L15.4645 20.1213L17.5858 18L15.4645 15.8787L16.8787 14.4645L19 16.5858Z"></path></svg></button><br>
-                    <button >Delete account <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"></path></svg></button>
+                    <button routerLink="/history">Account statement <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M3 4H21V6H3V4ZM3 19H21V21H3V19ZM3 14H21V16H3V14ZM3 9H21V11H3V9Z"></path></svg></button><br>
+                    <button (click)="logout()">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M14 14.252V22H4C4 17.5817 7.58172 14 12 14C12.6906 14 13.3608 14.0875 14 14.252ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM19 16.5858L21.1213 14.4645L22.5355 15.8787L20.4142 18L22.5355 20.1213L21.1213 21.5355L19 19.4142L16.8787 21.5355L15.4645 20.1213L17.5858 18L15.4645 15.8787L16.8787 14.4645L19 16.5858Z"></path></svg></button><br>
+                    <button (click)="deleteActive()" >Delete account <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M4 8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8ZM6 10V20H18V10H6ZM9 12H11V18H9V12ZM13 12H15V18H13V12ZM7 5V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V5H22V7H2V5H7ZM9 4V5H15V4H9Z"></path></svg></button>
                </div>
           </div>
 
@@ -52,18 +56,18 @@
 
 
   <!-- balance  enquiry -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngClass]="dAcno?'c2':''">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5 " id="exampleModalLabel">Balance Details</h1>
+                  <h1  class="modal-title fs-5 " id="exampleModalLabel">Balance Details</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <img src="https://i.postimg.cc/65ngkpzM/37-Z-2105-w007-n001-24-B-p12-24.jpg" alt="">
-                  <h4 class="ms-2">Hi <span class="text-info">Anu</span></h4>
-                  <p class="text-secondary">Your current balance in Account number 1000 is </p>
-                  <h4 style="font-weight: bolder;">Balance : <span>12000</span></h4>
+                  <h4 class="ms-2">Hi <span class="text-info">{{name}}</span></h4>
+                  <p class="text-secondary">Your current balance in Account number {{acno}} is </p>
+                  <h4 style="font-weight: bolder;">Balance : <span>{{balance}}</span></h4>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -82,24 +86,33 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <img class="img-fluid " style="max-height:45%; max-width: 90%; " src="https://i.postimg.cc/PqtCm0p4/4457841.jpg" alt="">
+        <img class="img-fluid " style="max-height:10%; max-width: 15%; " src="https://i.postimg.cc/PqtCm0p4/4457841.jpg" alt="">
       <div>
-        <form>
+
+        <div>
+          <h5 [ngClass]="msgClr?'s1':'s2'" class="text-center p-5">{{messages}}</h5>
+        </div>
+        <form [formGroup]="moneyTransferForm">
             <div class="mb-1">
               <label for="exampleInputEmail1" class="form-label">Recepient Account Number</label>
-              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input formControlName="rAcno" id="rac" name="ac" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <p *ngIf="moneyTransferForm.get('rAcno')?.errors && moneyTransferForm.get('rAcno')?.touched" class="text-danger">please provide account number</p>
+
             </div>
             <div class="mb-1">
                 <label for="exampleInputEmail1" class="form-label">Amount To Transfer</label>
-                <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input formControlName="amount" id="amnt" name="amn" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <p *ngIf="moneyTransferForm.get('amount')?.errors && moneyTransferForm.get('amount')?.touched" class="text-danger">please provide numbers</p>
+
               </div>
             <div class="mb-1">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label  for="exampleInputPassword1" class="form-label">Password</label>
+              <input formControlName="psw" id="ps" name="psn" type="password" class="form-control" id="exampleInputPassword1">
+              <p *ngIf="moneyTransferForm.get('psw')?.errors && moneyTransferForm.get('psw')?.touched" class="text-danger">include numbers and characters</p>
             </div>
           </form><br>
 
-       <button type="button" class="btn btn-outline-info form-control">Transfer</button>
+       <button (click)="moneyTransfer()" type="button" class="btn btn-outline-info form-control">Transfer</button>
       </div>
       
     </div>
@@ -117,8 +130,8 @@
         </div>
         <div id="userProfile" class="modal-body">
             <img src="https://i.postimg.cc/66SHc4J8/team.jpg" class="rounded-circle " alt="Cinque Terre"><br><br>
-            <h4 style="color: rebeccapurple; font-weight: 200;">User Name : </h4>
-            <h4 style="color: rebeccapurple; font-weight: 200;">Account Details : </h4>
+            <h4 style="color: rebeccapurple; font-weight: 200;">User Name : {{name}} </h4>
+            <h4 style="color: rebeccapurple; font-weight: 200;">Account Number :{{acno}} </h4>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 

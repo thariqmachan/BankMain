@@ -1,28 +1,7 @@
 /* 
 
-a{
-    color: aliceblue;
-    font-weight: 100px;
-}
-
-#a2,#p2{
- background-color: #4a342955;
-
-}
-input::placeholder{
-    color: aliceblue;
-}
-.container{
-    background-size: cover;
-    background-position: center center;
-    z-index: 10;
 
 
-
-} */
-
-
-/* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -241,4 +220,26 @@ body{
 }
 
 
+ */
 
+ .divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+h1{
+    color: cadetblue;
+}
+a{
+  color: red;
+}

@@ -1,4 +1,4 @@
-<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+<!-- <section class="h-100 h-custom" style="background-color: #8fc4b7;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-8 col-xl-6">
@@ -9,7 +9,7 @@
             <div class="card-body p-4 p-md-5">
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
   
-              <form class="px-md-2">
+              <form [formGroup]="signupForm" class="px-md-2">
   
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example1q" class="form-control" />
@@ -59,10 +59,88 @@
                   </div>
                 </div>
   
-                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+                <button (click)="signUp()" type="submit" class="btn btn-success btn-lg mb-1" >Submit</button>
   
               </form>
   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section class="vh-100" style="background-color:white">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;background-color: rgba(255, 105, 180, 0.23)">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form  [formGroup]="signupForm" class="">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-building-columns fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" formControlName="acno" name="acno" id="e1" class="form-control" placeholder="Enter Account No."/>
+                      </div>
+                    </div>
+                    <div *ngIf="this.signupForm.get('acno')?.errors && this.signupForm.get('acno')?.touched ">
+                      <p class="text-danger text-center">Accept Only Numbers</p>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" formControlName="uname" name="uname" id="p1" class="form-control" placeholder="Enter Username" />
+                      </div>
+                    </div>
+                    <div *ngIf="this.signupForm.get('uname')?.errors && this.signupForm.get('uname')?.touched " >
+                      <p class="text-danger text-center">Please Include Characters Only </p>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" formControlName="psw" name="password" id="a1" class="form-control" placeholder="Enter Password"/>
+                        <!-- form3Example4c -->
+                      </div>
+                    </div>
+                    <div *ngIf="this.signupForm.get('psw')?.errors && this.signupForm.get('psw')?.touched ">
+                      <p class="text-danger text-center">Please Include Characters And Numbers Only</p>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" formControlName="cpsw" name="confirm password" id="u1" class="form-control" placeholder="Confirm Password"/>
+                      </div>
+                    </div>
+                    <div *ngIf="pswCheck">
+                      <p class="text-danger text-center">Password Doesnt Match</p>
+                    </div>
+  
+                  
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button (click)="signup()" type="button" class="btn btn-lg">Register</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -103,8 +103,8 @@ body{
 
   .text{
     position: fixed;
-    top: 250px;
-    left: 500px;
+    top: 150px;
+    left: 550px;
 
   }
 
@@ -117,7 +117,7 @@ body{
   .text p{
     color: bisque;
     margin-left: 120px;
-    margin-top: 20px;
+    margin-top: 10px;
 
   }
   .text h3{
@@ -158,5 +158,16 @@ body{
 }
 
 
+.s1{
+  color: green;
+}
+.s2{
+  color: red;
+}
+
+.c2{
+  /* visibility: hidden; */
+  display: none;
+}
 
 

@@ -1,0 +1,61 @@
+<div>
+    <div class="row">
+        <div class="col-7 mb-5 pb-5">
+        <h3 class="text-center p-4">Transaction History </h3>
+        <h5 class="text-center">{{date | date:'medium'}}</h5>
+
+
+        <div class="btn-group p-3 ms-5 mb-4" role="group" aria-label="Basic example">
+            <button (click)="filterData('')" type="button" class="btn btn-light">All</button>
+            <button (click)="filterData('CREDIT')" type="button" class="btn btn-light">Credit</button>
+            <button (click)="filterData('DEBIT')" type="button" class="btn btn-light">Debit</button>
+          </div>
+
+          <div *ngIf="spinner" class="text-center  p-4">
+            <i class="fa-solid fa-spinner fa-spin fa-3x text-light"></i>
+          </div>
+
+            <table *ngIf="!spinner" class=" p-3 table table-striped-columns ms-5 ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Account Number</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of transactionArray | filter:searchTerm:'type',let j=index">
+                    <th scope="row">{{j+1}}</th>
+                    <td>{{i.type}}</td>
+                    <td>{{i.amount}}</td>
+                    <td>{{i.tacno}}</td>
+                    <td>{{i.date}}</td>
+
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+              <button (click)="pdfExport()" type="button" class="btn btn-outline-light px-5 ms-5 p-2 mt-5">
+                <b>Download</b> <i class="fa-solid fa-file-arrow-down ms-3 fa-2x" style="color: #49576f;"></i>
+            </button>
+
+        </div>
+
+
+        <div class="col-5">
+            <img src="" class="w-100" alt="">
+            <button  (click)="backtoHome()" type="button" class="btn btn-outline-secondary p-2 mt-5 ms-5 px-5">
+                <b>Back to </b>  <i class="fa-solid fa-house-circle-check"></i>
+
+            </button>
+           
+        </div>
+
+
+
+
+    </div>
+</div>
